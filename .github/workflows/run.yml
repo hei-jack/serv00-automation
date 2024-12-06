@@ -2,7 +2,7 @@ name: SSH Login
 
 on:
   schedule:
-    - cron: '0 11 5 * *'  # 每月的 5号 北京时间 19 点运行
+    - cron: '0 20 12 * *'  # 每月的 12号 UTC时间 20 点运行
   workflow_dispatch:
 
 jobs:
@@ -31,5 +31,6 @@ jobs:
           PUSH: ${{ secrets.PUSH }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          
+          API_URL: ${{ secrets.API_URL }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: python run.py
