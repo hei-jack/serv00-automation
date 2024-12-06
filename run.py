@@ -42,9 +42,7 @@ push = os.getenv('PUSH')
 
 def mail_push(url):
     data = {
-        "body": content,
-        "email": os.getenv('MAIL'),
-        "apiKey": os.getenv('API_KEY'),
+        "content": content
     }
 
     response = requests.post(url, json=data)
@@ -77,7 +75,7 @@ def telegram_push(message):
         print(f"发送消息到Telegram失败: {response.text}")
 
 if push == "mail":
-    mail_push(os.getenv("API_URL"))
+    mail_push(os.getenv('API_URL'))
 elif push == "telegram":
     telegram_push(content)
 else:
