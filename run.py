@@ -44,7 +44,7 @@ def mail_push(url):
     data = {
         "body": content,
         "email": os.getenv('MAIL'),
-        "apiKey": os.getenv('APIKEY'),
+        "apiKey": os.getenv('API_KEY'),
     }
 
     response = requests.post(url, json=data)
