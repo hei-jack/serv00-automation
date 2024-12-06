@@ -1,13 +1,11 @@
 
 # 说明 
 
+fork from bin862324915/serv00-automation
+
 因serv00服务器要求，如果用户帐户在 90 天内未通过 DevilWEB 或 SSH 面板正确登录，则该帐户将自动从系统中删除，并且无法恢复该帐户收集的数据。
 
 本仓库将用于定时自动化登录serv00的SSH连接执行指令并推送通知，可以实现定期登录保号的作用
-
-tg交流群：[https://t.me/zzzjsjl](https://t.me/zzzjsjl)
-
-**希望大家点个Star🌟🌟🌟支持下**
 
 ### 准备工作
 
