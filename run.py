@@ -35,7 +35,6 @@ for user, hostname in zip(user_list, hostname_list):
     content += f"用户名：{user}，服务器：{hostname}\n"
 beijing_timezone = timezone(timedelta(hours=8))
 time = datetime.now(beijing_timezone).strftime('%Y-%m-%d %H:%M:%S')
-menu = requests.get('https://api.zzzwb.com/v1?get=tg').json()
 loginip = requests.get('https://api.ipify.org?format=json').json()['ip']
 content += f"本次登录用户共： {user_num} 个\n登录时间：{time}\n登录IP：{loginip}"
 
@@ -65,7 +64,7 @@ def telegram_push(message):
         'text': message,
         'parse_mode': 'HTML',
         'reply_markup': json.dumps({
-            "inline_keyboard": menu,
+            "inline_keyboard": "问题反馈",
             "one_time_keyboard": True
          })
     }
@@ -77,7 +76,7 @@ def telegram_push(message):
         print(f"发送消息到Telegram失败: {response.text}")
 
 if push == "mail":
-    mail_push('https://zzzwb.us.kg/test')
+    mail_push('https://test.com')
 elif push == "telegram":
     telegram_push(content)
 else:
